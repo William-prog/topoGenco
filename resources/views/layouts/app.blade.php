@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Servicio Genco</title>
+    <title>Topo Genco</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -21,9 +21,9 @@
     <link href="{{ asset('css/checkbox.css') }}" rel="stylesheet">
     <link href="{{ asset('css/radio.css') }}" rel="stylesheet">
     <link href="{{ asset('css/circleProgress.css') }}" rel="stylesheet">
+
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
     <!-- Fonts -->
     <!-- <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> -->
@@ -38,7 +38,7 @@
 </head>
 
 <body>
-    <div id="app">
+<div id="app">
         <nav class="navbar-custom">
             <div class="container-menu">
                 <div class="header-navigation-menu">
@@ -70,7 +70,7 @@
                             <li>
                                 <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                     <span class="title">
-                                        {{ __('Cerrar Sesion ') }} 
+                                        {{ __('Bienvenido ') }} {{ Auth::user()->name }}
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                             @csrf
                                         </form>

@@ -26,12 +26,12 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Id Usuario') }}</label>
 
                             <div class="col-md-6">
-                                <input id="idClient" type="text" class="form-control @error('idClient') is-invalid @enderror" name="idClient" value="{{ old('idClient') }}" required autocomplete="idClient">
+                                <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
-                                @error('idClient')
+                                @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

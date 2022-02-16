@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\registroServicio;
-
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -25,15 +23,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-
-
-        // $registroServicio = registroServicio::all();
-        // $registroServicioIncompleto = registroServicio::where('ordenServicioEstado', '=', 'Incompleto')->get();
-        // $registroServicioCompleto = registroServicio::where('ordenServicioEstado', '=', 'Completo')->get();
-        // return view('home', compact('registroServicio', 'registroServicioIncompleto', 'registroServicioCompleto'));
-
-        $registroServicio = registroServicio::all();
-
-        return view('home', compact('registroServicio'));
+        return view('home');
     }
 }
