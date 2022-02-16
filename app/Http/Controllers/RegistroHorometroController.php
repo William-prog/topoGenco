@@ -54,9 +54,8 @@ class RegistroHorometroController extends Controller
         $horometroMantenimiento->totalHorometro = number_format($request->finalHorometro - $request->inicialHorometro, 2);
         $horometroMantenimiento->save();
 
-        $registroHorometro = registroHorometro::all();
 
-        return view('registroHorometro.index', compact('registroHorometro'));
+        return redirect('horometro');
     }
 
     /**

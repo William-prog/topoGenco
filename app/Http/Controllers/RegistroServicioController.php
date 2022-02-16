@@ -91,7 +91,7 @@ class RegistroServicioController extends Controller
             $registroServicio->save();
         }
 
-        return redirect('home');
+        return redirect('servicio');
     }
 
     /**

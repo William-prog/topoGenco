@@ -109,12 +109,12 @@
                             <tr>
                                 <th style="position: sticky; top: 0; width: 5%;">Folio</th>
                                 <th style="position: sticky; top: 0; width: 10%;">Fecha</th>
-                                <th style="position: sticky; top: 0; width: 35%;">Operador</th>
+                                <th style="position: sticky; top: 0; width: 25%;">Operador</th>
                                 <th style="position: sticky; top: 0; width: 25%;">Encargado</th>
                                 <!-- <th style="position: sticky; top: 0; width: 10%;">Empresa</th> -->
                                 <th style="position: sticky; top: 0; width: 10%;">Turno</th>
                                 <th style="position: sticky; top: 0; width: 10%;">Estado</th>
-                                <th style="position: sticky; top: 0; width: 5%;">Reporte</th>
+                                <th style="position: sticky; top: 0; width: 15%;">Reporte</th>
                             </tr>
                         </thead>
                         <p style="display:none;"> {{$contador=0}} </p>
@@ -137,29 +137,23 @@
                                 <!-- <td> {{$registro->empresa}} </td> -->
                                 <td> {{$registro->turno}} </td>
                                 <td>
-                                    <div class="form">
-                                        <div class="form-group">
-                                            <div class="row mt-1">
-                                                <div style="margin-left: 5%; padding: 1px; margin-bottom: 0rem !important" class="form-group col">
-                                                    @if($registro->horaSalida == '---')
-                                                    <a style="width: 83%; padding-left: 4%; font-size: 0.8vw;" href="{{ url('/servicio/'.$registro->idForanea.'/edit')}}" class="btn btn-danger">
-                                                        Cerrar Registro
-                                                    </a>
-                                                    @endif
-                                                    @if($registro->horaSalida != '---')
-                                                    <div style="margin-bottom: -6%; text-align: center; width: 83%; padding: 4%; font-size: 0.8vw;" class="alert alert-success" role="alert">
-                                                        <strong> Terminado </strong>
-                                                    </div>
-                                                    @endif
-                                                </div>
-                                            </div>
+                                    <div style="margin-bottom: -6%; text-align: center; width: 83%; padding: 4%; font-size: 0.8vw;" class="form-group col">
+                                        @if($registro->horaSalida == '---')
+                                        <a style="width: 83%; padding-left: 4%; font-size: 0.8vw;" href="{{ url('/servicio/'.$registro->idForanea.'/edit')}}" class="btn btn-danger">
+                                            Cerrar
+                                        </a>
+                                        @endif
+                                        @if($registro->horaSalida != '---')
+                                        <div style="margin-bottom: -6%; text-align: center; width: 83%; padding: 4%; font-size: 0.8vw;" class="alert alert-success" role="alert">
+                                            <strong> Terminado </strong>
                                         </div>
+                                        @endif
                                     </div>
                                 </td>
                                 <td>
                                     <div style="margin-left: 5%; padding: 1px; margin-bottom: 0rem !important" class="form-group col">
                                         <a style="width: 80%; font-size: 0.8vw;" href="{{ url('/generarReportePorServicio/PDF/'.$registro->fechaRegistro.'/'.$registro->turno.'/'.$registro->id) }}" target="_blank" class="btn btn-warning">
-                                            Ver Reporte
+                                            Reporte
                                             <i style="color: red;" class="fas fa-file-pdf" aria-hidden="true"></i>
                                         </a>
                                     </div>
