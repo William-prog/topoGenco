@@ -19,7 +19,7 @@
 
                                 @error('idClient')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong><h1>{{ $message }}</h1></strong>
                                     </span>
                                 @enderror
                             </div>
