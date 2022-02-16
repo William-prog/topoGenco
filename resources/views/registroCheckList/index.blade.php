@@ -101,7 +101,7 @@
                         </div>
                     </td>
                     <td>
-                        <a style="width: 100%; font-size: 0.8vw;" href="{{ url('/generarReportePorServicio/PDF/'.$checkList->id) }}" target="_blank" class="btn btn-warning">
+                        <a style="width: 100%; font-size: 0.8vw;" href="{{ url('/generarReporteCheckList/PDF/'.$checkList->id) }}" target="_blank" class="btn btn-warning">
                             Generar Reporte
                             <i style="color: red;" class="fas fa-file-pdf" aria-hidden="true"></i>
                         </a>

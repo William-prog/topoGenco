@@ -145,8 +145,8 @@ class RegistroServicioController extends Controller
             $registroServicio->fechaRegistro = $request->fechaRegistro[$i];
             $registroServicio->turno = $request->turno[$i];
             $registroServicio->horometroIni = $request->horometroIni[$i];
-            $registroServicio->horometroFin = $request->horometroFin[$i];
-            $registroServicio->horometroRes =  $request->horometroFin[$i] - $request->horometroIni[$i];
+            $registroServicio->horometroFin = $request->HorFi;
+            $registroServicio->horometroRes =  $request->HorFi - $request->horometroIni[$i];
 
             $registroServicio->horaEntrada = $request->horaEntrada[$i];
             $registroServicio->nivelTrabajo = $request->nivelTrabajo[$i];
@@ -170,7 +170,7 @@ class RegistroServicioController extends Controller
         registroServicio::where('idForanea', $idForanea)->delete();
 
 
-        return redirect('home');
+        return redirect('servicio');
     }
 
     /**

@@ -55,7 +55,7 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-10">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
                     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous" type="70cf02be0b65b144043f4959-text/javascript"></script>
@@ -110,10 +110,10 @@
                                 <th style="position: sticky; top: 0; width: 5%;">Folio</th>
                                 <th style="position: sticky; top: 0; width: 10%;">Fecha</th>
                                 <th style="position: sticky; top: 0; width: 25%;">Operador</th>
-                                <th style="position: sticky; top: 0; width: 25%;">Encargado</th>
+                                <th style="position: sticky; top: 0; width: 15%;">Encargado</th>
                                 <!-- <th style="position: sticky; top: 0; width: 10%;">Empresa</th> -->
                                 <th style="position: sticky; top: 0; width: 10%;">Turno</th>
-                                <th style="position: sticky; top: 0; width: 10%;">Estado</th>
+                                <th style="position: sticky; top: 0; width: 15%;">Estado</th>
                                 <th style="position: sticky; top: 0; width: 15%;">Reporte</th>
                             </tr>
                         </thead>
@@ -144,7 +144,7 @@
                                         </a>
                                         @endif
                                         @if($registro->horaSalida != '---')
-                                        <div style="margin-bottom: -6%; text-align: center; width: 83%; padding: 4%; font-size: 0.8vw;" class="alert alert-success" role="alert">
+                                        <div style="width: 100%; font-size: 0.8vw;" class="alert alert-success" role="alert">
                                             <strong> Terminado </strong>
                                         </div>
                                         @endif
