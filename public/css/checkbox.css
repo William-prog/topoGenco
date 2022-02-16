@@ -1,0 +1,32 @@
+.checkbox {
+    position: relative;
+    cursor: pointer;
+    appearance: none;
+    width: 45px;
+    height: 25px;
+    border-radius: 10px;
+    border: 2px solid red;
+    outline: none;
+    transition: 0.3s;
+}
+
+.checkbox::before {
+    content: "";
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background: red;
+    top: 3px;
+    left: 4px;
+    transition: 0.3s ease-in-out;
+}
+
+.checkbox:checked::before {
+    transform: translateX(18.5px);
+    background: green;
+}
+
+.checkbox:checked {
+    border-color: green;
+}
