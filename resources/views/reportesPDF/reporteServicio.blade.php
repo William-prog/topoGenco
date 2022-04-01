@@ -59,7 +59,7 @@
             <strong>Horómetro Inicial: </strong>
             @foreach($registros as $registro)
             @if($id== $registro->id)
-            {{$registro->horometroIni}}
+            {{$registro->transporteHorometroInicio}}
             @endif
             @endforeach
         </td>
@@ -75,7 +75,7 @@
             <strong>Horómetro Final: </strong>
             @foreach($registros as $registro)
             @if($id== $registro->id)
-            {{$registro->horometroFin}}
+            {{$registro->transporteHorometroFinal}}
             @endif
             @endforeach
         </td>
@@ -86,7 +86,7 @@
             <?php
             date_default_timezone_set("America/Mexico_City");
             setlocale(LC_TIME, 'es_VE.UTF-8', 'esp');
-            $data['Fecha'] = $registro->fechaRegistro;
+            $data['Fecha'] = $registro->transporteFechaRegistro;
             $marca = strtotime($data['Fecha']);
             ?>
             <?= strftime('%e/%B/%Y', $marca) ?>
@@ -102,7 +102,7 @@
             <strong>Horómetro: </strong>
             @foreach($registros as $registro)
             @if($id== $registro->id)
-            {{$registro->horometroRes}}
+            {{$registro->transporteHorometroResultado}}
             @endif
             @endforeach
         </td>
@@ -142,32 +142,32 @@
 
     @foreach($registros as $registro)
 
-    @if($registro->turno == $turno)
+    @if($registro->transporteTurno == $turno)
     <tr>
         <td class="centrar">
             {{$contador = $contador + 1}}
         </td>
         <td class="centrar">
-            {{$registro->numeroEmpleado}}
+            {{$registro->transporteNumeroEmpleado}}
         </td>
         <td class="izq">
-            {{$registro->nombre}}
+            {{$registro->transporteNombre}}
         </td>
         <td class="centrar">
-            {{$registro->horaEntrada}}
+            {{$registro->transporteHoraEntrada}}
         </td>
         <td class="centrar">
-            {{$registro->nivelTrabajo}}
+            {{$registro->transporteNivelTrabajoEntrada}}
         </td>
         <td class="centrar">
-            {{$registro->horaSalida}}
+            {{$registro->transporteHoraSalida}}
         </td>
         <td class="centrar">
-            @if($registro->nivelTrabajoS == '000-Superficie' )
+            @if($registro->transporteNivelTrabajoSalida == '000-Superficie' )
             Superficie
             @endif
-            @if($registro->nivelTrabajoS != '000-Superficie' )
-            {{$registro->nivelTrabajoS}}
+            @if($registro->transporteNivelTrabajoSalida != '000-Superficie' )
+            {{$registro->transporteNivelTrabajoSalida}}
             @endif
 
         </td>
@@ -191,7 +191,7 @@
     @if($id == $registro->id)
     <tr>
         <td class="izq">
-            {{$registro->observaciones}}
+            {{$registro->transporteObservaciones}}
         </td>
     </tr>
     @endif

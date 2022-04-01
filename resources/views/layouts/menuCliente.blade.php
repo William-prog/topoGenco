@@ -30,3 +30,9 @@
         </li>
     </ul>
 </li>
+
+<li style="font-size: 12px;" class="dropdown">
+    <a href="/home" class="sub-menu-toggle">
+        {{ __('Mantenimientos ') }} <span class="caret"><i class="fas fa-indent"></i></span>
+    </a>
+</li>

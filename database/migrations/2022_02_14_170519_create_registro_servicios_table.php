@@ -15,32 +15,34 @@ class CreateRegistroServiciosTable extends Migration
     {
         Schema::create('registro_servicios', function (Blueprint $table) {
             $table->id();
-            
             $table->string('idForanea');
             $table->string('codigoIdentificador');
-            $table->date('fechaRegistro');
-            $table->string('turno');
-            $table->double('horometroIni');
-            $table->double('horometroFin');
-            $table->double('horometroRes');
+
+
+            $table->string('transporteNumeroEmpleado');
+            $table->string('transporteNombre');
+            $table->string('transporteTipoServicio');
+            $table->string('transporteHoraEntrada');
+            $table->string('transporteNivelTrabajoEntrada');
+            $table->date('transporteFechaRegistro');
+            $table->string('transporteEncargado');
+            $table->string('transporteNumOperador');
+            $table->string('transporteNomOperador');
+
             
-            $table->string('tipoServicio');
+            $table->string('transporteTurno');
+            $table->double('transporteHorometroInicio');
+            $table->double('transporteHorometroFinal');
+            $table->double('transporteHorometroResultado');
 
-            $table->string('numeroEmpleado');
-            $table->string('nombre');
-            // $table->string('empresa');
-            $table->string('horaEntrada');
-            $table->string('nivelTrabajo');
-            $table->text('observaciones');
-            $table->string('encargado');
-            $table->string('numOperador');
-            $table->string('nomOperador');
 
-            // $table->string('verifico');
-            // $table->string('recibeTurno');
 
-            $table->string('horaSalida');
-            $table->string('nivelTrabajoS');
+            $table->text('transporteObservaciones');
+           
+            
+
+            $table->string('transporteHoraSalida');
+            $table->string('transporteNivelTrabajoSalida');
 
             $table->timestamps();
         });

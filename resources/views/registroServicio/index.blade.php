@@ -127,23 +127,23 @@
                                     <?php
                                     date_default_timezone_set("America/Mexico_City");
                                     setlocale(LC_TIME, 'es_VE.UTF-8', 'esp');
-                                    $data['Fecha'] = $registro->fechaRegistro;
+                                    $data['Fecha'] = $registro->transporteFechaRegistro;
                                     $marca = strtotime($data['Fecha']);
                                     ?>
                                     <?= strftime('%e/%B/%Y', $marca) ?>
                                 </td>
-                                <td> {{$registro->nomOperador}} </td>
-                                <td> {{$registro->encargado}} </td>
+                                <td> {{$registro->transporteNomOperador}} </td>
+                                <td> {{$registro->transporteEncargado}} </td>
                                 <!-- <td> {{$registro->empresa}} </td> -->
-                                <td> {{$registro->turno}} </td>
+                                <td> {{$registro->transporteTurno}} </td>
                                 <td>
                                     <div style="margin-bottom: -6%; text-align: center; width: 83%; padding: 4%; font-size: 0.8vw;" class="form-group col">
-                                        @if($registro->horaSalida == '---')
+                                        @if($registro->transporteHoraSalida == '---')
                                         <a style="width: 83%; padding-left: 4%; font-size: 0.8vw;" href="{{ url('/servicio/'.$registro->idForanea.'/edit')}}" class="btn btn-danger">
                                             Cerrar
                                         </a>
                                         @endif
-                                        @if($registro->horaSalida != '---')
+                                        @if($registro->transporteHoraSalida != '---')
                                         <div style="width: 100%; font-size: 0.8vw;" class="alert alert-success" role="alert">
                                             <strong> Terminado </strong>
                                         </div>
@@ -152,7 +152,7 @@
                                 </td>
                                 <td>
                                     <div style="margin-left: 5%; padding: 1px; margin-bottom: 0rem !important" class="form-group col">
-                                        <a style="width: 80%; font-size: 0.8vw;" href="{{ url('/generarReportePorServicio/PDF/'.$registro->fechaRegistro.'/'.$registro->turno.'/'.$registro->id) }}" target="_blank" class="btn btn-warning">
+                                        <a style="width: 80%; font-size: 0.8vw;" href="{{ url('/generarReportePorServicio/PDF/'.$registro->transporteFechaRegistro.'/'.$registro->transporteTurno.'/'.$registro->id) }}" target="_blank" class="btn btn-warning">
                                             Reporte
                                             <i style="color: red;" class="fas fa-file-pdf" aria-hidden="true"></i>
                                         </a>

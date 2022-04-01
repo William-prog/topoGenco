@@ -48,44 +48,51 @@ class RegistroServicioController extends Controller
             $idForanea = $ultimoId->id + 1;
         }
 
-        $cantidadUsuarios = count($request->numeroEmpleado);
+        $cantidadUsuarios = count($request->transporteNumeroEmpleado);
 
         for ($i = 0; $i < $cantidadUsuarios; $i++) {
             $registroServicio = new registroServicio();
 
             $registroServicio->idForanea = $idForanea;
 
-            $registroServicio->codigoIdentificador = $request->fechaRegistro[$i] . '-' . $request->turno[$i];
-            $registroServicio->fechaRegistro = $request->fechaRegistro[$i];
-            $registroServicio->turno = $request->turno[$i];
-            $registroServicio->horometroIni = $request->horometroIni[$i];
-            $registroServicio->horometroFin = '000';
-            $registroServicio->horometroRes = '0';
+            $registroServicio->codigoIdentificador = $request->fecha_Form . '-' . $request->turno_Form;
 
 
-            if ($request->tipoServicio[$i] == 'Entrada') {
-                $registroServicio->horaEntrada = $request->horaEntrada[$i];
-                $registroServicio->nivelTrabajo = $request->nivelTrabajo[$i];
-                $registroServicio->horaSalida = "---";
-                $registroServicio->nivelTrabajoS = "---";
+            $registroServicio->transporteNumeroEmpleado = $request->transporteNumeroEmpleado[$i];
+            $registroServicio->transporteNombre = $request->transporteNombre[$i];
+
+            if ($request->transporteTipoServicio[$i] == 'Entrada') {
+                $registroServicio->transporteHoraEntrada = $request->transporteHoraEntrada[$i];
+                $registroServicio->transporteNivelTrabajoEntrada = $request->transporteNivelTrabajoEntrada[$i];
+                $registroServicio->transporteHoraSalida = "---";
+                $registroServicio->transporteNivelTrabajoSalida = "---";
             }
 
-            if ($request->tipoServicio[$i] == 'Salida') {
-                $registroServicio->horaEntrada = "---";
-                $registroServicio->nivelTrabajo = "---";
-                $registroServicio->horaSalida = $request->horaEntrada[$i];
-                $registroServicio->nivelTrabajoS = $request->nivelTrabajo[$i];
+            if ($request->transporteTipoServicio[$i] == 'Salida') {
+                $registroServicio->transporteHoraSalida = "---";
+                $registroServicio->transporteNivelTrabajoSalida = "---";
+                $registroServicio->transporteHoraEntrada = $request->transporteHoraEntrada[$i];
+                $registroServicio->transporteNivelTrabajoEntrada = $request->transporteNivelTrabajoEntrada[$i];
             }
 
-            $registroServicio->tipoServicio = $request->tipoServicio[$i];
 
-            $registroServicio->numeroEmpleado = $request->numeroEmpleado[$i];
-            $registroServicio->nombre = $request->nombre[$i];
 
-            $registroServicio->observaciones = "Inicio Turno";
-            $registroServicio->encargado = $request->encargado[$i];
-            $registroServicio->numOperador = $request->numOperador[$i];
-            $registroServicio->nomOperador = $request->nomOperador[$i];
+            $registroServicio->transporteTipoServicio = $request->transporteTipoServicio[$i];
+            
+            $registroServicio->transporteEncargado = $request->encargado_Form;
+            $registroServicio->transporteNumOperador = $request->numeroOperador_Form;
+            $registroServicio->transporteNomOperador = $request->nombreOperador_Form;
+
+
+
+            $registroServicio->transporteFechaRegistro = $request->fecha_Form;
+            $registroServicio->transporteTurno = $request->turno_Form;
+
+            $registroServicio->transporteHorometroInicio = $request->horoInicial_Form;
+            $registroServicio->transporteHorometroFinal = '0';
+            $registroServicio->transporteHorometroResultado = '0';
+            $registroServicio->transporteObservaciones = "Inicio Turno";
+
 
 
             $registroServicio->save();
@@ -126,7 +133,7 @@ class RegistroServicioController extends Controller
      */
     public function update(Request $request, $idForanea)
     {
-        $cantidadUsuarios = count($request->numeroEmpleado);
+        $cantidadUsuarios = count($request->transporteNumeroEmpleado);
 
         $ultimoId = registroServicio::latest('id')->first();
 
@@ -141,28 +148,28 @@ class RegistroServicioController extends Controller
 
             $registroServicio->idForanea = $idForaneaRegistroSalida;
 
-            $registroServicio->codigoIdentificador = $request->fechaRegistro[$i] . '-' . $request->turno[$i];
-            $registroServicio->fechaRegistro = $request->fechaRegistro[$i];
-            $registroServicio->turno = $request->turno[$i];
-            $registroServicio->horometroIni = $request->horometroIni[$i];
-            $registroServicio->horometroFin = $request->HorFi;
-            $registroServicio->horometroRes =  $request->HorFi - $request->horometroIni[$i];
+            $registroServicio->codigoIdentificador = $request->transporteFechaRegistro[$i] . '-' . $request->transporteTurno[$i];
+            $registroServicio->transporteFechaRegistro = $request->transporteFechaRegistro[$i];
+            $registroServicio->transporteTurno = $request->transporteTurno[$i];
+            $registroServicio->transporteHorometroInicio = $request->transporteHorometroInicio[$i];
+            $registroServicio->transporteHorometroFinal = $request->HorFi;
+            $registroServicio->transporteHorometroResultado =  $request->HorFi - $request->transporteHorometroInicio[$i];
 
-            $registroServicio->horaEntrada = $request->horaEntrada[$i];
-            $registroServicio->nivelTrabajo = $request->nivelTrabajo[$i];
+            $registroServicio->transporteHoraEntrada = $request->transporteHoraEntrada[$i];
+            $registroServicio->transporteNivelTrabajoEntrada = $request->transporteNivelTrabajoEntrada[$i];
 
-            $registroServicio->horaSalida = $request->horaSalida[$i];
-            $registroServicio->nivelTrabajoS = $request->nivelTrabajoS[$i];
+            $registroServicio->transporteHoraSalida = $request->transporteHoraSalida[$i];
+            $registroServicio->transporteNivelTrabajoSalida = $request->transporteNivelTrabajoSalida[$i];
 
-            $registroServicio->tipoServicio = $request->tipoServicio[$i];
+            $registroServicio->transporteTipoServicio = $request->transporteTipoServicio[$i];
 
-            $registroServicio->numeroEmpleado = $request->numeroEmpleado[$i];
-            $registroServicio->nombre = $request->nombre[$i];
+            $registroServicio->transporteNumeroEmpleado = $request->transporteNumeroEmpleado[$i];
+            $registroServicio->transporteNombre = $request->transporteNombre[$i];
 
-            $registroServicio->observaciones = $request->observaciones_Form;
-            $registroServicio->encargado = $request->encargado[$i];
-            $registroServicio->numOperador = $request->numOperador[$i];
-            $registroServicio->nomOperador = $request->nomOperador[$i];
+            $registroServicio->transporteObservaciones = $request->transporteObservaciones;
+            $registroServicio->transporteEncargado = $request->transporteEncargado[$i];
+            $registroServicio->transporteNumOperador = $request->transporteNumOperador[$i];
+            $registroServicio->transporteNomOperador = $request->transporteNomOperador[$i];
 
             $registroServicio->save();
         }

@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\registroHorometroCincuenta;
+use App\Models\registroHorometroCien;
+use App\Models\registroHorometroCientoCincuenta;
+use App\Models\registroHorometroQuinientos;
+
 class HomeController extends Controller
 {
     /**
@@ -23,6 +28,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+
+        $horometroHorometroCincuenta = registroHorometroCincuenta::all();
+        $horometroHorometroCien = registroHorometroCien::all();
+        $horometroHorometroCientoCincuenta = registroHorometroCientoCincuenta::all();
+        $horometroHorometroQuinientos = registroHorometroQuinientos::all();
+
+        return view('home', compact('horometroHorometroCincuenta', 'horometroHorometroCien', 'horometroHorometroCientoCincuenta', 'horometroHorometroQuinientos'));
     }
 }

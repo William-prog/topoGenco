@@ -415,7 +415,7 @@
                 <div class="form-group col">
                     <div class="middle">
                         <button type="submit" style="cursor: pointer" class="btn btn1">
-                            {{ __('Guardar Horómetro     ') }}<i class="fas fa-plus-circle"></i>
+                            {{ __('Guardar CheckList     ') }}<i class="fas fa-plus-circle"></i>
                         </button>
                     </div>
                 </div>

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRegistroHorometroMantenimientosTable extends Migration
+class CreateRegistroHorometroCientoCincuentasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,13 @@ class CreateRegistroHorometroMantenimientosTable extends Migration
      */
     public function up()
     {
-        Schema::create('registro_horometro_mantenimientos', function (Blueprint $table) {
+        Schema::create('registro_horometro_ciento_cincuentas', function (Blueprint $table) {
             $table->id();
-            
             $table->date('fechaHorometro');
             $table->string('turnoHorometro');
             $table->double('inicialHorometro');
             $table->double('finalHorometro');
             $table->double('totalHorometro');
-
             $table->timestamps();
         });
     }
@@ -33,6 +31,6 @@ class CreateRegistroHorometroMantenimientosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('registro_horometro_mantenimientos');
+        Schema::dropIfExists('registro_horometro_ciento_cincuentas');
     }
 }

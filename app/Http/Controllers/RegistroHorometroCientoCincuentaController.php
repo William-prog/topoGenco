@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\registroHorometroMantenimiento;
+use App\Models\registroHorometroCientoCincuenta;
 use Illuminate\Http\Request;
 
-class RegistroHorometroMantenimientoController extends Controller
+class RegistroHorometroCientoCincuentaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,7 @@ class RegistroHorometroMantenimientoController extends Controller
      */
     public function index()
     {
-        $registroHorometroMantenimiento = registroHorometroMantenimiento::all();
-        return view('registroHorometro.index', compact('registroHorometroMantenimiento'));
+        //
     }
 
     /**
@@ -42,10 +41,10 @@ class RegistroHorometroMantenimientoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\registroHorometroMantenimiento  $registroHorometroMantenimiento
+     * @param  \App\Models\registroHorometroCientoCincuenta  $registroHorometroCientoCincuenta
      * @return \Illuminate\Http\Response
      */
-    public function show(registroHorometroMantenimiento $registroHorometroMantenimiento)
+    public function show(registroHorometroCientoCincuenta $registroHorometroCientoCincuenta)
     {
         //
     }
@@ -53,10 +52,10 @@ class RegistroHorometroMantenimientoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\registroHorometroMantenimiento  $registroHorometroMantenimiento
+     * @param  \App\Models\registroHorometroCientoCincuenta  $registroHorometroCientoCincuenta
      * @return \Illuminate\Http\Response
      */
-    public function edit(registroHorometroMantenimiento $registroHorometroMantenimiento)
+    public function edit(registroHorometroCientoCincuenta $registroHorometroCientoCincuenta)
     {
         //
     }
@@ -65,10 +64,10 @@ class RegistroHorometroMantenimientoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\registroHorometroMantenimiento  $registroHorometroMantenimiento
+     * @param  \App\Models\registroHorometroCientoCincuenta  $registroHorometroCientoCincuenta
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, registroHorometroMantenimiento $registroHorometroMantenimiento)
+    public function update(Request $request, registroHorometroCientoCincuenta $registroHorometroCientoCincuenta)
     {
         //
     }
@@ -76,10 +75,10 @@ class RegistroHorometroMantenimientoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\registroHorometroMantenimiento  $registroHorometroMantenimiento
+     * @param  \App\Models\registroHorometroCientoCincuenta  $registroHorometroCientoCincuenta
      * @return \Illuminate\Http\Response
      */
-    public function destroy(registroHorometroMantenimiento $registroHorometroMantenimiento)
+    public function destroy(registroHorometroCientoCincuenta $registroHorometroCientoCincuenta)
     {
         //
     }

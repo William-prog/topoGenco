@@ -11,7 +11,7 @@ class ReportesController extends Controller
 
     public function generarReportePorServicio($fechaRegistro, $turno, $id)
     {
-        $datos['registros'] = registroServicio::where('fechaRegistro', $fechaRegistro)->orderBy('created_at', 'asc')->get();
+        $datos['registros'] = registroServicio::where('transporteFechaRegistro', $fechaRegistro)->orderBy('created_at', 'asc')->get();
 
         $pdf = \PDF::loadView('reportesPDF.reporteServicio', $datos, compact('fechaRegistro', 'turno', 'id'));
 

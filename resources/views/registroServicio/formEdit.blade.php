@@ -55,7 +55,7 @@
                     @foreach($registros as $registro)
                     @if($registro->id == $registro->idForanea)
                     <label for="fechaRegistro"> <strong> Horómetro Inicial: </strong> </label>
-                    <input type="number" placeholder="" value="{{$registro->horometroIni}}" class="form-control" name="HorIn" id="HorIn" readonly="readonly">
+                    <input type="number" placeholder="" value="{{$registro->transporteHorometroInicio}}" class="form-control" name="HorIn" id="HorIn" readonly="readonly">
                     @endif
                     @endforeach
                 </div>
@@ -110,7 +110,7 @@
                 </div>
                 <div class="form-group col-md-12">
                     <label for="observaciones">Observaciones:</label>
-                    <textarea class="form-control" name="observaciones_Form" id="observaciones_Form" rows="5" required></textarea>
+                    <textarea class="form-control" name="transporteObservaciones" id="transporteObservaciones" rows="5" required></textarea>
                 </div>
             </div>
 
@@ -143,22 +143,22 @@
                     @foreach($registros as $registro)
                     <tr>
                         <td style="display:none;">
-                            <input type="text" class="form-control form-control-sm numeroEmpleado" name="numeroEmpleado[]" value="{{$registro->numeroEmpleado }}" readonly="readonly">
+                            <input type="text" class="form-control form-control-sm transporteNumeroEmpleado" name="transporteNumeroEmpleado[]" value="{{$registro->transporteNumeroEmpleado }}" readonly="readonly">
                         </td>
                         <td>
-                            <input type="text" class="form-control form-control-sm nombre" name="nombre[]" value="{{$registro->nombre }}" readonly="readonly">
+                            <input type="text" class="form-control form-control-sm transporteNombre" name="transporteNombre[]" value="{{$registro->transporteNombre }}" readonly="readonly">
                         </td>
                         <td>
-                            <input type="text" class="form-control form-control-sm horaEntrada" name="horaEntrada[]" value="{{$registro->horaEntrada }}" readonly="readonly">
+                            <input type="text" class="form-control form-control-sm transporteHoraEntrada" name="transporteHoraEntrada[]" value="{{$registro->transporteHoraEntrada }}" readonly="readonly">
                         </td>
                         <td style="display:none;">
-                            <input type="text" class="form-control form-control-sm nivelTrabajo" name="nivelTrabajo[]" value="{{$registro->nivelTrabajo }}" readonly="readonly">
+                            <input type="text" class="form-control form-control-sm transporteNivelTrabajoEntrada" name="transporteNivelTrabajoEntrada[]" value="{{$registro->transporteNivelTrabajoEntrada }}" readonly="readonly">
                         </td>
                         <td>
-                            <input type="time" class="form-control form-control-sm horaSalida" name="horaSalida[]" required>
+                            <input type="time" class="form-control form-control-sm transporteHoraSalida" name="transporteHoraSalida[]" required>
                         </td>
                         <td>
-                            <select class="form-select" aria-label="Default select example" name="nivelTrabajoS[]" required>
+                            <select class="form-select" aria-label="Default select example" name="transporteNivelTrabajoSalida[]" required>
                                 <option selected>Seleccione</option>
                                 <option value="Superficie">Superficie</option>
                                 <option value="530">530</option>
@@ -167,32 +167,32 @@
                             </select>
                         </td>
                         <td style="display:none;">
-                            <input type="text" class="form-control form-control-sm horaSalida" id="horometroFin[]" placeholder="{{$registro->horometroIni }}" name="horometroFin[]">
+                            <input type="text" class="form-control form-control-sm horaSalida" id="transporteHorometroFinal[]" placeholder="{{$registro->transporteHorometroFinal }}" name="transporteHorometroFinal[]">
                         </td>
                         <!-- datos que no se muestran :P -->
                         <td style="display:none;">
-                            <input type="text" class="tipoServicio" name="tipoServicio[]" value="{{$registro->tipoServicio }}">
+                            <input type="text" class="transporteTipoServicio" name="transporteTipoServicio[]" value="{{$registro->transporteTipoServicio }}">
                         </td>
                         <td style="display:none;">
-                            <input type="text" class="fechaRegistro" name="fechaRegistro[]" value="{{$registro->fechaRegistro }}">
+                            <input type="text" class="transporteFechaRegistro" name="transporteFechaRegistro[]" value="{{$registro->transporteFechaRegistro }}">
                         </td>
                         <td style="display:none;">
-                            <input type="text" class="encargado" name="encargado[]" value="{{$registro->encargado }}">
+                            <input type="text" class="transporteEncargado" name="transporteEncargado[]" value="{{$registro->transporteEncargado }}">
                         </td>
                         <td style="display:none;">
-                            <input type="text" class="numOperador" name="numOperador[]" value="{{$registro->numOperador }}">
+                            <input type="text" class="transporteNumOperador" name="transporteNumOperador[]" value="{{$registro->transporteNumOperador }}">
                         </td>
                         <td style="display:none;">
-                            <input type="text" class="nomOperador" name="nomOperador[]" value="{{$registro->nomOperador }}">
+                            <input type="text" class="transporteNomOperador" name="transporteNomOperador[]" value="{{$registro->transporteNomOperador }}">
                         </td>
                         <td style="display:none;">
-                            <input type="text" class="horometroIni" name="horometroIni[]" value="{{$registro->horometroIni }}">
+                            <input type="text" class="transporteHorometroInicio" name="transporteHorometroInicio[]" value="{{$registro->transporteHorometroInicio }}">
                         </td>
                         <td style="display:none;">
-                            <input type="text" class="horometroRes" name="horometroRes[]" value="{{$registro->horometroRes }}">
+                            <input type="text" class="transporteHorometroResultado" name="transporteHorometroResultado[]" value="{{$registro->transporteHorometroResultado }}">
                         </td>
                         <td style="display:none;">
-                            <input type="text" class="turno" name="turno[]" value="{{$registro->turno}}">
+                            <input type="text" class="transporteTurno" name="transporteTurno[]" value="{{$registro->transporteTurno}}">
                         </td>
                         @endforeach
                 </tbody>
@@ -236,7 +236,7 @@
                         La informacion recabada de esta encuesta es confidencial y unica.<br>
                         El objetivo de esto es establecier los elementos para identificar, analizar y tener
                         los datos necesarios para mostrar metricas, asi como para promover un entorno organizacional
-                        favorable en el servicio del Alimak.<br>
+                        favorable en el servicio del Genco.<br>
                     </p>
                     <div id="alertaGuardar" class="alert alert-danger" role="alert">
                         <strong> Al momento de guardar este formulario, ya no podras realizar cambios en la informacion, cerrando por completo el formulario</strong>
