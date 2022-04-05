@@ -325,13 +325,13 @@
                 text: 'LLena todos los campos',
             })
         } else {
-            Swal.fire({
-                position: 'center',
-                icon: 'success',
-                title: 'Empleado ' + nombre + ' agregado.',
-                showConfirmButton: false,
-                timer: 1500
-            })
+            // Swal.fire({
+            //     position: 'center',
+            //     icon: 'success',
+            //     title: 'Empleado ' + nombre + ' agregado.',
+            //     showConfirmButton: false,
+            //     timer: 1500
+            // })
             var html = template(data);
             $("#addRow").append(html)
         }

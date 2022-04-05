@@ -24,7 +24,7 @@ class RegistroMantenimientoQuinientasController extends Controller
      */
     public function create()
     {
-        //
+        return view('cartaMantenimientoCien.create');
     }
 
     /**
@@ -46,7 +46,7 @@ class RegistroMantenimientoQuinientasController extends Controller
      */
     public function show(registroMantenimientoQuinientas $registroMantenimientoQuinientas)
     {
-        //
+        //v
     }
 
     /**
