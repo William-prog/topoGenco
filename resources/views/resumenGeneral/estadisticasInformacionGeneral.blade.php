@@ -672,22 +672,21 @@
 
     <script>
         function estadisticasGeneralCartas() {
-            const jsonCartaCuarentaHoras = <?php echo json_encode($registroCartaCuarentaHoras) ?>;
-            const jsonCartaCientoVeinteHoras = <?php echo json_encode($registroCartaCientoVeinteHoras) ?>;
+            const registroMantenimientoCincuenta = <?php echo json_encode($registroMantenimientoCincuenta) ?>;
+            const jsonCartaMantenimientoCien = <?php echo json_encode($registroMantenimientoCien) ?>;
 
             var Fecha_Desde = $('#Fecha_Desde_General').val();
             var Fecha_Hasta = $('#Fecha_Hasta_General').val();
 
 
-            let cantCartaCuarentaHoras = jsonCartaCuarentaHoras.filter(function(type, index) {
+            let cantCartaCuarentaHoras = registroMantenimientoCien.filter(function(type, index) {
                 return type.cuarenta_Fecha >= Fecha_Desde && type.cuarenta_Fecha <= Fecha_Hasta
             });
 
-            let cantCartaCientoVeinteHoras = jsonCartaCientoVeinteHoras.filter(function(type, index) {
+            let cantCartaCientoVeinteHoras = jsonCartaMantenimientoCien.filter(function(type, index) {
                 return type.cientoVeinte_Fecha >= Fecha_Desde && type.cientoVeinte_Fecha <= Fecha_Hasta
             });
 
-            console.log(cantCartaCuarentaHoras);
         }
     </script>
 
@@ -710,7 +709,7 @@
                             </thead>
                             <p style="display:none;"> {{$contador=0}} </p>
                             <tbody>
-                                @foreach($registroCartaCuarentaHoras as $datoCU)
+                                @foreach($registroMantenimientoCien as $datoCU)
                                 <tr>
                                     <td>{{$contador = $contador + 1}}</td>
                                     <td>
@@ -742,7 +741,7 @@
                             </thead>
                             <p style="display:none;"> {{$contador=0}} </p>
                             <tbody>
-                                @foreach($registroCartaCientoVeinteHoras as $datoCV)
+                                @foreach($registroMantenimieen as $datoCV)
                                 <tr>
                                     <td>{{$contador = $contador + 1}}</td>
                                     <td>
