@@ -43,7 +43,7 @@
     <div class="accordion" id="accordionExample">
         <!-- <div class="accordion-item">
             <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                @include('estadisticas.estadisticasServicios')
+                
             </div>
         </div> -->
         <div class="accordion-item">
