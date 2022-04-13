@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\registroHorometro;
 
 class EstadisticasController extends Controller
 {
@@ -13,7 +14,9 @@ class EstadisticasController extends Controller
      */
     public function index()
     {
-        return view('resumenGeneral.estadisticas');
+        $registroHorometro = registroHorometro::orderBy('fechaHorometro', 'asc')->get();
+
+        return view('resumenGeneral.index', compact('registroHorometro'));
     }
 
     /**
