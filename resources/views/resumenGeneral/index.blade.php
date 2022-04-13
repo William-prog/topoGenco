@@ -48,12 +48,12 @@
         </div> -->
         <div class="accordion-item">
             <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                @include('estadisticas.estadisticasHorometros')
+                @include('resumenGeneral.estadisticasHorometros')
             </div>
         </div>
         <div class="accordion-item">
             <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                @include('estadisticas.estadisticasInformacionGeneral')
+                @include('resumenGeneral.estadisticasInformacionGeneral')
             </div>
         </div>
     </div>
