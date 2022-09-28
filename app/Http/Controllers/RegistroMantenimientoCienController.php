@@ -90,10 +90,10 @@ class RegistroMantenimientoCienController extends Controller
         $registroHorometroCien->turnoHorometro = $request->input('mantenimientoTurno');
         $registroHorometroCien->inicialHorometro = $request->input('mantenimientoHorometro');
         $registroHorometroCien->finalHorometro = $request->input('mantenimientoHorometro');
-        if($sum < 50){
+        if ($sum < 50) {
             $registroHorometroCien->totalHorometro = 0;
         }
-        if($sum >= 50){
+        if ($sum >= 50) {
             $registroHorometroCien->totalHorometro = $sum - 50;
         }
         $registroHorometroCien->save();
